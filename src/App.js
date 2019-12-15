@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 
 import './App.css';
-
+import * as d3 from 'd3';
 import ServingRatePlot from './Containers/ServingRatePlot';
 import ServingHeatMap from './Containers/ServingHeatMap';
 import SpeedViolation25 from './Containers/SpeedViolation25';
@@ -15,11 +15,13 @@ import PassengerOverall from './Containers/PassengerOverall';
 import Home from './Containers/Home';
 import { Navbar, Nav } from 'react-bootstrap';
 
+import data from './data/vehicle_paths.csv';
+
 function Navigation(props) {
   return (
 
     <Navbar collapseOnSelect expand="md" bg="dark" variant="dark" sticky="top">
-      <Navbar.Brand href="/vis"> Cab Visualization</Navbar.Brand>
+      <Navbar.Brand href="/vis/Home"> Cab Visualization</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav nav-right">
         <Nav className="mr-auto">
@@ -39,6 +41,27 @@ function Navigation(props) {
 
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      path: []
+    }
+  }
+
+  componentDidMount() {
+    let path = [];
+    d3.csv(data).then(data => {
+      data.forEach(row => {
+        if (path[row.Vehicle_ID] === undefined) {
+          path[row.Vehicle_ID] = { 'id': row.Vehicle_ID, 'p': [] }
+        }
+        path[row.Vehicle_ID]['p'].push([row.Timestamp, row.Latitude, row.Longitude, row.Num_Passengers]);
+      })
+      this.setState({ path: path })
+    }).catch(function (err) {
+      throw err;
+    })
+  }
   render() {
     return (
       <Router>
@@ -51,7 +74,7 @@ class App extends React.Component {
               <Route path="/vis/speedViolation25" component={SpeedViolation25} />
               <Route path="/vis/passengerViolation4" component={PassengerViolation4} />
               <Route path="/vis/passengerOverall" component={PassengerOverall} />
-              <Route path="/vis/" component={Home} />
+              <Route path="/vis/Home" component={Home} />
             </Switch>
           </div>
         </div>
