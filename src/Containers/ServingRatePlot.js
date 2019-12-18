@@ -1,7 +1,7 @@
 import React from 'react';
 import { spec } from './BarChartSpec';
 import { LineChartSpec } from './LineChartSpec';
-import { Vega , VegaLite} from 'react-vega';
+import { Vega, VegaLite } from 'react-vega';
 import servingRate from '../data/vehicle_serving.json';
 
 class ServingRatePlot extends React.Component {
@@ -9,7 +9,7 @@ class ServingRatePlot extends React.Component {
         super(props);
         this.state = {
             plot: 'stackedBar',
-            data:''
+            data: ''
         }
     }
 
@@ -36,10 +36,10 @@ class ServingRatePlot extends React.Component {
         return (
             <div>
                 <div>
-                <VegaLite spec={spec} data={barData} signalListeners={this.signalListeners} />
+                    <Vega spec={spec} data={barData} signalListeners={this.signalListeners} />
                 </div>
                 <div>
-                    <VegaLite spec={LineChartSpec} signalListeners={this.signalListeners} />
+                    <Vega spec={LineChartSpec} signalListeners={this.signalListeners} />
                 </div>
                 {/* {console.log(servingRate)} */}
                 Container for Plotting serving Rate

@@ -50,17 +50,17 @@ class App extends React.Component {
 
   componentDidMount() {
     let path = [];
-    d3.csv(data).then(data => {
-      data.forEach(row => {
-        if (path[row.Vehicle_ID] === undefined) {
-          path[row.Vehicle_ID] = { 'id': row.Vehicle_ID, 'p': [] }
-        }
-        path[row.Vehicle_ID]['p'].push([row.Timestamp, row.Latitude, row.Longitude, row.Num_Passengers]);
-      })
-      this.setState({ path: path })
-    }).catch(function (err) {
-      throw err;
-    })
+    // d3.csv(data).then(data => {
+    //   data.forEach(row => {
+    //     if (path[row.Vehicle_ID] === undefined) {
+    //       path[row.Vehicle_ID] = { 'id': row.Vehicle_ID, 'p': [] }
+    //     }
+    //     path[row.Vehicle_ID]['p'].push([row.Timestamp, row.Latitude, row.Longitude, row.Num_Passengers]);
+    //   })
+    //   this.setState({ path: path })
+    // }).catch(function (err) {
+    //   throw err;
+    // })
   }
   render() {
     return (
