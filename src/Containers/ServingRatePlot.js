@@ -1,6 +1,6 @@
 import React from 'react';
-import { spec } from './BarChartSpec';
-import { LineChartSpec } from './LineChartSpec';
+import { spec } from '../Components/BarChartSpec';
+import { LineChartSpec } from '../Components/LineChartSpec';
 import { Vega, VegaLite } from 'react-vega';
 import servingRate from '../data/vehicle_serving.json';
 
@@ -33,13 +33,32 @@ class ServingRatePlot extends React.Component {
         var barData = {
             table: servingRate
         };
+        console.log(servingRate);
+        let newData = [];
+        servingRate.map(row => {
+            let newRow1 = {};
+            let newRow2 = {};
+            newRow1["x"] = row.Hour;
+            newRow1["y"] = row.servedRate;
+            newRow1["c"] = 0;
+            newRow2["x"] = row.Hour;
+            newRow2["y"] = row.overAllServing;
+            newRow2["c"] = 1;
+
+            newData.push(newRow1);
+            newData.push(newRow2);
+            // return newRow1;
+        })
+        var lineData = {
+            table: newData
+        }
         return (
             <div>
                 <div>
                     <Vega spec={spec} data={barData} signalListeners={this.signalListeners} />
                 </div>
                 <div>
-                    <Vega spec={LineChartSpec} signalListeners={this.signalListeners} />
+                    <Vega spec={LineChartSpec} data={lineData} signalListeners={this.signalListeners} />
                 </div>
                 {/* {console.log(servingRate)} */}
                 Container for Plotting serving Rate

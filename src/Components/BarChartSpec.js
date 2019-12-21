@@ -59,6 +59,25 @@ exports.spec = {
       },
     },
     {
+      type: 'line',
+      tooltip: true,
+      from: { data: 'table' },
+      encode: {
+        enter: {
+          x: { scale: 'xscale', field: 'Hour', offset: 1 },
+          width: { scale: 'xscale', band: 1, offset: -1 },
+          y: { scale: 'yscale', field: 'overAllServing' },
+          y2: { scale: 'yscale', value: 0 },
+        },
+        update: {
+          fill: { value: 'steelblue' },
+        },
+        hover: {
+          fill: { value: 'red' },
+        },
+      },
+    },
+    {
       type: 'text',
       tooltip: true,
       encode: {

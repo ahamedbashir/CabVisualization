@@ -1,35 +1,53 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
-
+import GoogleMap from 'google-map-react';
+import Marker from './Marker';
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
-class GoogleMap extends Component {
+
+class MyMap extends Component {
   static defaultProps = {
     center: {
-      lat: 59.95,
-      lng: 30.33
+      lat: 40.758896,
+      lng: -73.985130
     },
-    zoom: 14
+    zoom: 12
   };
 
   render() {
+    const points = [
+      {
+        lat: 40.858896,
+        lng: -73.985130,
+        text: ""
+      },
+      {
+        lat: 40.058896,
+        lng: -73.985130,
+        text: ""
+      },
+      {
+        lat: 40.758896,
+        lng: -74.985130,
+        text: ""
+      }
+    ];
     return (
       // Important! Always set the container height explicitly
-      <div style={{ height: '70vh', width: '50%', margin:'auto' }}>
-        <GoogleMapReact
-        //   bootstrapURLKeys={{ key: /* YOUR KEY HERE */ }}
+      <div style={{ height: '80vh', width: '90%', margin: 'auto' }}>
+        <GoogleMap
+          bootstrapURLKeys={{
+            key: process.env.REACT_APP_GMap_KEY,
+            libraries: ['visualization'],
+          }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
-        >
-          <AnyReactComponent
-            lat={59.955413}
-            lng={30.337844}
-            text="My Marker"
-          />
-        </GoogleMapReact>
+          // yesIWantToUseGoogleMapApiInternals
+          heatmap={[{ lat: 40.758896, lang: -73.985130, weight: 10 }]}
+        />
       </div>
     );
   }
 }
 
-export default GoogleMap
+export default MyMap;

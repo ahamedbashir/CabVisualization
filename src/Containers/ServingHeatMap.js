@@ -1,5 +1,7 @@
 import React from 'react';
-import GoogleMap from '../Components/GoogleMap';
+import MyMap from '../Components/GoogleMap';
+import MapLegend from '../Components/SimpleExample';
+import './ServingHeatMap.css';
 
 class ServingHeatMap extends React.Component {
     constructor(props) {
@@ -12,12 +14,18 @@ class ServingHeatMap extends React.Component {
 
     render() {
         return (
-            <div className="container mb-5 mt-5">
-                Container for Serving HeatMap
-                <div id="map">
-                    <GoogleMap/>
-                </div>
-            </div>
+            // <div className="container mb-2 mt-1">
+            <iFrame
+                className="iframe"
+                frameborder="0"
+                src="https://aham-carto.carto.com/builder/2f72564c-cfb1-42a6-861a-d63174d9b97f/embed"
+                allowfullscreen
+                webkitallowfullscreen
+                mozallowfullscreen
+                oallowfullscreen
+                msallowfullscreen
+            />
+            // </div>
         );
     }
 };

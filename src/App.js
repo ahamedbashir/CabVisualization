@@ -67,7 +67,7 @@ class App extends React.Component {
       <Router>
         <Navigation />
         <div className="container-fluid text-center">
-          <div className="row justify-content-center">
+          <div className="row justify-content-center" id="container">
             <Switch>
               <Route path="/vis/servingRate" component={ServingRatePlot} />
               <Route path="/vis/servingHeatMap" component={ServingHeatMap} />
