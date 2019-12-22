@@ -13,18 +13,6 @@ class ServingRatePlot extends React.Component {
         }
     }
 
-    // componentDidMount() {
-
-    //     let servingPerHour = {};
-    //     let table = [];
-    //     servingRate.map(row => {
-    //         let res = {};
-    //         res[row.Hour] = (row.servedRate).toFixed(2);
-    //         table.push(res);
-    //     });
-    //     servingPerHour.table = table;
-    //     this.setState({data: servingPerHour})
-    // }
     handleHover = (...args) => {
         console.log(args);
     }

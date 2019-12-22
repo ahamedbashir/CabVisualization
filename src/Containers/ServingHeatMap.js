@@ -1,6 +1,4 @@
 import React from 'react';
-import MyMap from '../Components/GoogleMap';
-import MapLegend from '../Components/SimpleExample';
 import './ServingHeatMap.css';
 
 class ServingHeatMap extends React.Component {

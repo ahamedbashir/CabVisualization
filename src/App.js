@@ -15,8 +15,6 @@ import PassengerOverall from './Containers/PassengerOverall';
 import Home from './Containers/Home';
 import { Navbar, Nav } from 'react-bootstrap';
 
-import data from './data/vehicle_paths.csv';
-
 function Navigation(props) {
   return (
 
@@ -44,7 +42,6 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      path: []
     }
   }
 
