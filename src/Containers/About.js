@@ -6,10 +6,10 @@ class About extends React.Component {
         return (
 
             <div className="">
-                <div className="card-body m-5 h4">Most of the dataset are processed using Python</div>
+                <div className="card-body m-5 text-success h2">Most of the datasets are processed using Python</div>
                 <div className="card m-4 row container-fluid justify-content-center" >
                     <div className="card-body ">
-                        <div className="card-title h5"> Task 1 & Task 2 Data Preparation</div>
+                        <div className="card-header bg-info h5"> Task 1 & Task 2 Data Preparation</div>
                     </div>
 
                     <ol className="text-left">
@@ -43,7 +43,7 @@ class About extends React.Component {
 
                 <div className="card row m-4 container-fluid justify-content-center">
                     <div className="card-body ">
-                        <div className="card-title h5"> Task 3 & 4 & 5 Data Preparation</div>
+                        <div className="card-header bg-info h5"> Task 3 & 4 & 5 Data Preparation</div>
                     </div>
 
                     <ol className="text-left">
