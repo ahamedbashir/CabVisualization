@@ -47,3 +47,7 @@
 .bg-semi-transparent{
     background-color: rgba(25, 37, 22, 0.7);
 }
+
+.rateButton {
+    position: sticky;
+}

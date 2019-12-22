@@ -1,7 +1,7 @@
 import React from 'react';
 import { spec } from '../Components/BarChartSpec';
 import { LineChartSpec } from '../Components/LineChartSpec';
-import { Vega} from 'react-vega';
+import { Vega } from 'react-vega';
 import servingRate from '../data/vehicle_serving.json';
 
 class ServingRatePlot extends React.Component {
@@ -66,19 +66,24 @@ class ServingRatePlot extends React.Component {
             table: this.state.line
         }
         return (
-            <div className="mt-5">
-                <div className="buttonRight" style={{ top: '3rem' }} ><button className="btn btn-success m-2" onClick={() => this.handleData(this.state.servedData1, this.state.servedData2, this.state.title1)}>served Rate</button></div>
-                <div className="buttonRight" style={{ top: '6rem' }}><button className="btn btn-danger m-2" onClick={() => this.handleData(this.state.unservedData1, this.state.unservedData2, this.state.title2)}>Unserved Rate</button></div>
+            <div className="mt-3">
+                <div className="h4">Cab Service Hourly Rate Line Chart and Bar Plot</div>
+                <div>
+                    <button className="btn btn-success m-2" onClick={() => this.handleData(this.state.servedData1, this.state.servedData2, this.state.title1)}>served Rate</button>
+                    <button className="btn btn-danger m-2" onClick={() => this.handleData(this.state.unservedData1, this.state.unservedData2, this.state.title2)}>Unserved Rate</button>
+                </div>
+
 
                 <div className="row">
-                    <div className="card m-3">
-                        <Vega className="card-body" spec={spec} data={barData} signalListeners={this.signalListeners} />
-                        <div className="card-title font-weight-bold">Bar Plot for {this.state.title}</div>
-                    </div>
-                    <div className="card m-3">
+                    <div className="card col-sm-6">
                         <Vega className="card-body" spec={LineChartSpec} data={lineData} signalListeners={this.signalListeners} />
                         <div className="card-title font-weight-bold">Line Chart for {this.state.title}</div>
                     </div>
+                    <div className="card col-sm-6">
+                        <Vega className="card-body" spec={spec} data={barData} signalListeners={this.signalListeners} />
+                        <div className="card-title font-weight-bold">Bar Plot for {this.state.title}</div>
+                    </div>
+
 
                 </div>
             </div>
