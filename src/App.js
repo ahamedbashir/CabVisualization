@@ -21,7 +21,7 @@ function Navigation(props) {
   return (
 
     <Navbar collapseOnSelect expand="md" bg="dark" variant="dark" sticky="top">
-      <Navbar.Brand href="/vis/Home">Home</Navbar.Brand>
+      <Navbar.Brand href="/">Home</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav nav-right">
         <Nav className="mr-auto">
