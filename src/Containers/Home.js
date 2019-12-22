@@ -12,9 +12,13 @@ class Home extends React.Component {
 
     render() {
         return (
-            <div>
-                <div>
-                    Welcome to the Taxi Cab Simulation of Manhattan
+            <div >
+                <div className="display-4 m-5">
+                    Welcome!
+                    <div className="h4">
+                        See the day of Taxi Cabs in Manhattan
+                    </div>
+                    
                 </div>
                 
 
