@@ -6,7 +6,7 @@
 .iframeTop{
     position:absolute;
     top:10%;
-    right:1%;
+    right:1rem;
     width:"10px";
     height:40px;
 }
@@ -24,4 +24,26 @@
     position:absolute;
     width:"10px";
     height:40px;
+    
+}
+
+.visInfoBox {
+    position:absolute;
+    top:10%;
+    left:1rem;
+    width:"10px";
+    height:40px;
+    
+}
+
+.cartoInfoBox {
+    position:absolute;
+    top:50%;
+    right:2rem;
+    width:"10px";
+    height:40px;
+}
+
+.bg-semi-transparent{
+    background-color: rgba(25, 37, 22, 0.7);
 }

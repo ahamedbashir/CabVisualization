@@ -33,7 +33,7 @@ class Home extends React.Component {
                 <div className="card m-1">
                     <Nav.Link className="" href="/vis/passengerOverall">Number of Passenger Over Time</Nav.Link>
                 </div>
-                <div className="mt-5 card row">
+                <div className="mt-5 h5 card row">
                     <a className="text-info" href="/vis/info"> To learn about the data and Processing steps, Click Here or go to info</a>
                 </div>
             </div >
