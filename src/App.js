@@ -74,7 +74,7 @@ class App extends React.Component {
               <Route path="/vis/speedViolation25" component={SpeedViolation25} />
               <Route path="/vis/passengerViolation4" component={PassengerViolation4} />
               <Route path="/vis/passengerOverall" component={PassengerOverall} />
-              <Route path="/vis/Home" component={Home} />
+              <Route path="/" component={Home} />
             </Switch>
           </div>
         </div>
