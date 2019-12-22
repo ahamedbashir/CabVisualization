@@ -1,5 +1,5 @@
 import React from 'react';
-import {Nav} from 'react-bootstrap'
+import { Nav } from 'react-bootstrap'
 
 
 class Home extends React.Component {
@@ -18,9 +18,9 @@ class Home extends React.Component {
                     <div className="h4">
                         See the day of Taxi Cabs in Manhattan
                     </div>
-                    
+
                 </div>
-                
+
 
                 <div className="card">
                     <Nav.Link className="" href="/vis/servingRate">Service Rate</Nav.Link>
@@ -33,6 +33,9 @@ class Home extends React.Component {
                 </div>
                 <div className="card">
                     <Nav.Link className="" href="/vis/passengerOverall">Number of Passenger Over Time</Nav.Link>
+                </div>
+                <div className="mt-5 card row">
+                    <a className="text-success" href="/vis/info"> To learn about the data and Processing steps, Click Here or go to info</a>
                 </div>
             </div >
         );

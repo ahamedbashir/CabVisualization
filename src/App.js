@@ -14,6 +14,7 @@ import PassengerViolation4 from './Containers/PassengerViolation4';
 import PassengerOverall from './Containers/PassengerOverall';
 import Home from './Containers/Home';
 import { Navbar, Nav } from 'react-bootstrap';
+import About from './Containers/About';
 
 function Navigation(props) {
   return (
@@ -30,7 +31,7 @@ function Navigation(props) {
           <Nav.Link href="/vis/passengerOverall">All Passenger</Nav.Link>
         </Nav>
         <Nav>
-
+          <Nav.Link className="text-success " href="/vis/info">Info</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
@@ -47,7 +48,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <Router>
+      <Router >
         <Navigation />
         <div className="container-fluid text-center">
           <div className="row justify-content-center" id="container">
@@ -57,6 +58,7 @@ class App extends React.Component {
               <Route path="/vis/speedViolation25" component={SpeedViolation25} />
               <Route path="/vis/passengerViolation4" component={PassengerViolation4} />
               <Route path="/vis/passengerOverall" component={PassengerOverall} />
+              <Route path="/vis/info" component={About} />
               <Route path="/" component={Home} />
             </Switch>
           </div>
