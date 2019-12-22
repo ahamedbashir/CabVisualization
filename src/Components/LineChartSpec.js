@@ -1,7 +1,7 @@
 exports.LineChartSpec = {
     "$schema": "https://vega.github.io/schema/vega/v5.json",
-    "width": 600,
-    "height": 400,
+    "width": 400,
+    "height": 200,
     "padding": 25,
   
     "signals": [
@@ -56,7 +56,7 @@ exports.LineChartSpec = {
   
     "axes": [
       {"orient": "bottom", "scale": "x", title: "Hour"},
-      {"orient": "left", "scale": "y", title: "Served Rate"}
+      {"orient": "left", "scale": "y", title: "Service Rate"}
     ],
   
     "marks": [

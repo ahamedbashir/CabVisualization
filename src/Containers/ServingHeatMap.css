@@ -10,3 +10,17 @@
     width:"10px";
     height:40px;
 }
+
+
+.buttonRight {
+    position:absolute;
+    right:5%;
+    width:"10px";
+    height:40px;
+}
+
+.plot {
+    position:absolute;
+    width:"10px";
+    height:40px;
+}

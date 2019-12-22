@@ -8,48 +8,64 @@ class ServingRatePlot extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            plot: 'stackedBar',
-            data: ''
+            servedData1: '',
+            servedData2: '',
+            unservedData1: '',
+            unservedData2: '',
+            bar: '',
+            line: ''
         }
     }
 
     handleHover = (...args) => {
         console.log(args);
     }
+    componentWillMount() {
+        let servedPlotData = [];
+        let unservedPlotData = [];
+        let servedLineData = [];
+        let unservedLineData = [];
+
+        servingRate.map(row => {
+
+            servedLineData.push({"x": row.Hour, "y": row.servedRate, "c":1});
+            servedLineData.push({"x": row.Hour, "y": (100 - row.overAllServing), "c":0});
+            unservedLineData.push({"x": row.Hour, "y": (100- row.servedRate), "c":1});
+            unservedLineData.push({"x": row.Hour, "y": row.overAllServing, "c":0});
+
+            servedPlotData.push({ 'Hour': row.Hour, 'servedRate': row.servedRate });
+            unservedPlotData.push({ 'Hour': row.Hour, 'servedRate': 100 - row.servedRate });
+            console.log(servedPlotData, unservedPlotData);
+        })
+
+        this.setState({
+            servedData1: servedPlotData,
+            servedData2: servedLineData,
+            unservedData1: unservedPlotData,
+            unservedData2: unservedLineData,
+            bar: servedPlotData,
+            line: servedLineData
+        })
+    }
 
     render() {
         var barData = {
-            table: servingRate
+            table: this.state.bar
         };
-        console.log(servingRate);
-        let newData = [];
-        servingRate.map(row => {
-            let newRow1 = {};
-            let newRow2 = {};
-            newRow1["x"] = row.Hour;
-            newRow1["y"] = row.servedRate;
-            newRow1["c"] = 0;
-            newRow2["x"] = row.Hour;
-            newRow2["y"] = row.overAllServing;
-            newRow2["c"] = 1;
 
-            newData.push(newRow1);
-            newData.push(newRow2);
-            // return newRow1;
-        })
+        
         var lineData = {
-            table: newData
+            table: this.state.line
         }
         return (
             <div>
-                <div>
+                <div className="buttonRight" style={{ top: '5rem' }} ><button className="btn btn-success m-2" onClick={() => this.setState({ bar: this.state.servedData1, line: this.state.servedData2})}>served Rate</button></div>
+                <div className = "buttonRight" style={{top:'8rem'}}><button className="btn btn-danger m-2" onClick={ ()=> this.setState({ bar: this.state.unservedData1, line: this.state.unservedData2})}>Unserved Rate</button></div>
+
+                <div className = "plot" style={{top:'1rem', right:"15%"}} >
                     <Vega spec={spec} data={barData} signalListeners={this.signalListeners} />
-                </div>
-                <div>
                     <Vega spec={LineChartSpec} data={lineData} signalListeners={this.signalListeners} />
                 </div>
-                {/* {console.log(servingRate)} */}
-                Container for Plotting serving Rate
             </div>
         );
     }
