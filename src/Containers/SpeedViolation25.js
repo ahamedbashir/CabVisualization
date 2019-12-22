@@ -14,7 +14,7 @@ class SpeedViolation25 extends React.Component {
     render() {
         return (
             <div>
-                <iFrame
+                <iframe
                     className="iframe"
                     frameborder="0"
                     src="https://ahamedbashir.github.io/cabSpeedViolation/"
