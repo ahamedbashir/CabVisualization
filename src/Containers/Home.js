@@ -22,20 +22,20 @@ class Home extends React.Component {
                 </div>
 
 
-                <div className="card">
+                <div className="card m-1">
                     <Nav.Link className="" href="/vis/servingRate">Service Rate</Nav.Link>
                 </div>
-                <div className="card">
+                <div className="card m-1">
                     <Nav.Link className="" href="/vis/servingHeatMap">Service Rate Plot</Nav.Link>
                 </div>
-                <div className="card">
+                <div className="card m-1">
                     <Nav.Link className="" href="/vis/speedViolation25">Speed Violation</Nav.Link>
                 </div>
-                <div className="card">
+                <div className="card m-1">
                     <Nav.Link className="" href="/vis/passengerOverall">Number of Passenger Over Time</Nav.Link>
                 </div>
                 <div className="mt-5 card row">
-                    <a className="text-success" href="/vis/info"> To learn about the data and Processing steps, Click Here or go to info</a>
+                    <a className="text-info" href="/vis/info"> To learn about the data and Processing steps, Click Here or go to info</a>
                 </div>
             </div >
         );
