@@ -13,7 +13,10 @@ class Home extends React.Component {
     render() {
         return (
             <div>
-                Welcome to the Taxi Cab Simulation of Manhattan
+                <div>
+                    Welcome to the Taxi Cab Simulation of Manhattan
+                </div>
+                
 
                 <div className="card">
                     <Nav.Link className="" href="/vis/servingRate">Service Rate</Nav.Link>

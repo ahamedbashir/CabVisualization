@@ -1,7 +1,7 @@
 import React from 'react';
 import { spec } from '../Components/BarChartSpec';
 import { LineChartSpec } from '../Components/LineChartSpec';
-import { Vega, VegaLite } from 'react-vega';
+import { Vega} from 'react-vega';
 import servingRate from '../data/vehicle_serving.json';
 
 class ServingRatePlot extends React.Component {
@@ -38,7 +38,7 @@ class ServingRatePlot extends React.Component {
 
             servedPlotData.push({ 'Hour': row.Hour, 'servedRate': row.servedRate });
             unservedPlotData.push({ 'Hour': row.Hour, 'servedRate': 100 - row.servedRate });
-            console.log(servedPlotData, unservedPlotData);
+            return true;
         })
 
         this.setState({
