@@ -66,8 +66,8 @@ class ServingRatePlot extends React.Component {
             table: this.state.line
         }
         return (
-            <div className="mt-3">
-                <div className="h4">Cab Service Hourly Rate Line Chart and Bar Plot</div>
+            <div className="mt-5">
+                <div className="h4 mb-5">Cab Service Hourly Rate Line Chart and Bar Plot</div>
                 <div>
                     <button className="btn btn-success m-2" onClick={() => this.handleData(this.state.servedData1, this.state.servedData2, this.state.title1)}>served Rate</button>
                     <button className="btn btn-danger m-2" onClick={() => this.handleData(this.state.unservedData1, this.state.unservedData2, this.state.title2)}>Unserved Rate</button>
