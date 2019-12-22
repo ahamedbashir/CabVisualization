@@ -12,7 +12,7 @@ class Home extends React.Component {
 
     render() {
         return (
-            <div >
+            <div className="center">
                 <div className="display-4 m-5">
                     Welcome!
                     <div className="h4">
