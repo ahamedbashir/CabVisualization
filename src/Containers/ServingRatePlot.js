@@ -13,7 +13,10 @@ class ServingRatePlot extends React.Component {
             unservedData1: '',
             unservedData2: '',
             bar: '',
-            line: ''
+            line: '',
+            title: '',
+            title1: "Served Rate Per Hour",
+            title2: "Unserved Rate Per Hour"
         }
     }
 
@@ -28,10 +31,10 @@ class ServingRatePlot extends React.Component {
 
         servingRate.map(row => {
 
-            servedLineData.push({"x": row.Hour, "y": row.servedRate, "c":1});
-            servedLineData.push({"x": row.Hour, "y": (100 - row.overAllServing), "c":0});
-            unservedLineData.push({"x": row.Hour, "y": (100- row.servedRate), "c":1});
-            unservedLineData.push({"x": row.Hour, "y": row.overAllServing, "c":0});
+            servedLineData.push({ "x": row.Hour, "y": row.servedRate, "c": 1 });
+            servedLineData.push({ "x": row.Hour, "y": (100 - row.overAllServing), "c": 0 });
+            unservedLineData.push({ "x": row.Hour, "y": (100 - row.servedRate), "c": 1 });
+            unservedLineData.push({ "x": row.Hour, "y": row.overAllServing, "c": 0 });
 
             servedPlotData.push({ 'Hour': row.Hour, 'servedRate': row.servedRate });
             unservedPlotData.push({ 'Hour': row.Hour, 'servedRate': 100 - row.servedRate });
@@ -44,8 +47,13 @@ class ServingRatePlot extends React.Component {
             unservedData1: unservedPlotData,
             unservedData2: unservedLineData,
             bar: servedPlotData,
-            line: servedLineData
+            line: servedLineData,
+            title: this.state.title1
         })
+    }
+
+    handleData = (bar, line, title) => {
+        this.setState({ bar: bar, line: line, title: title });
     }
 
     render() {
@@ -53,18 +61,25 @@ class ServingRatePlot extends React.Component {
             table: this.state.bar
         };
 
-        
+
         var lineData = {
             table: this.state.line
         }
         return (
-            <div>
-                <div className="buttonRight" style={{ top: '5rem' }} ><button className="btn btn-success m-2" onClick={() => this.setState({ bar: this.state.servedData1, line: this.state.servedData2})}>served Rate</button></div>
-                <div className = "buttonRight" style={{top:'8rem'}}><button className="btn btn-danger m-2" onClick={ ()=> this.setState({ bar: this.state.unservedData1, line: this.state.unservedData2})}>Unserved Rate</button></div>
+            <div className="mt-5">
+                <div className="buttonRight" style={{ top: '3rem' }} ><button className="btn btn-success m-2" onClick={() => this.handleData(this.state.servedData1, this.state.servedData2, this.state.title1)}>served Rate</button></div>
+                <div className="buttonRight" style={{ top: '6rem' }}><button className="btn btn-danger m-2" onClick={() => this.handleData(this.state.unservedData1, this.state.unservedData2, this.state.title2)}>Unserved Rate</button></div>
 
-                <div className = "plot" style={{top:'1rem', right:"15%"}} >
-                    <Vega spec={spec} data={barData} signalListeners={this.signalListeners} />
-                    <Vega spec={LineChartSpec} data={lineData} signalListeners={this.signalListeners} />
+                <div className="row">
+                    <div className="card m-3">
+                        <Vega className="card-body" spec={spec} data={barData} signalListeners={this.signalListeners} />
+                        <div className="card-title font-weight-bold">Bar Plot for {this.state.title}</div>
+                    </div>
+                    <div className="card m-3">
+                        <Vega className="card-body" spec={LineChartSpec} data={lineData} signalListeners={this.signalListeners} />
+                        <div className="card-title font-weight-bold">Line Chart for {this.state.title}</div>
+                    </div>
+
                 </div>
             </div>
         );

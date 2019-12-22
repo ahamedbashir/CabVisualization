@@ -56,7 +56,7 @@ exports.LineChartSpec = {
   
     "axes": [
       {"orient": "bottom", "scale": "x", title: "Hour"},
-      {"orient": "left", "scale": "y", title: "Service Rate"}
+      {"orient": "left", "scale": "y", title: "Service Rate (%)"}
     ],
   
     "marks": [
@@ -85,10 +85,10 @@ exports.LineChartSpec = {
                 "fillOpacity": {"value": 1}
               },
               "hover": {
-                "fillOpacity": {"value": 0.5}
+                "fillOpacity": { "value": 0.5 }
               }
             }
-          }
+          },
         ]
       }
     ]

@@ -6,7 +6,7 @@ exports.spec = {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   width: 400,
   height: 200,
-  padding: { left: 50, right: 50, top: 50, bottom: 50 },
+  padding: 25,
 
   data: [{ name: 'table' }],
 
@@ -37,7 +37,7 @@ exports.spec = {
   ],
 
   axes: [{ orient: 'bottom', scale: 'xscale', title: "Hour" },
-        { orient: 'left', scale: 'yscale', title: "Service Rate" }],
+        { orient: 'left', scale: 'yscale', title: "Service Rate (%)" }],
 
   marks: [
     {

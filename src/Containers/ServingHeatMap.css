@@ -13,10 +13,11 @@
 
 
 .buttonRight {
-    position:absolute;
-    right:5%;
+    position:fixed;
+    right:0;
     width:"10px";
     height:40px;
+    z-index: 10000;
 }
 
 .plot {
