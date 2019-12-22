@@ -11,11 +11,11 @@ class Home extends React.Component {
 
     render() {
         return (
-            <div className="center">
+            <div className="center mr-2 ml-2">
                 <div className="display-4 m-5">
                     Welcome!
-                    <div className="h4">
-                        See the day of Taxi Cabs in Manhattan
+                    <div className="h4 mt-1">
+                        Here You Can See the Daily life of NYC Cab
                     </div>
 
                 </div>
@@ -33,7 +33,7 @@ class Home extends React.Component {
                 <div className="card m-1">
                     <Nav.Link className="" href="/vis/passengerOverall">Number of Passenger Over Time</Nav.Link>
                 </div>
-                <div className="mt-5 h5 card row">
+                <div className="mt-5 h5 card">
                     <a className="text-info" href="/vis/info"> To learn about the data and Processing steps, Click Here or go to info</a>
                 </div>
             </div >
