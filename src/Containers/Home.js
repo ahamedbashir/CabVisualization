@@ -1,7 +1,6 @@
 import React from 'react';
 import { Nav } from 'react-bootstrap'
 
-
 class Home extends React.Component {
     constructor(props) {
         super(props);
@@ -26,7 +25,7 @@ class Home extends React.Component {
                     <Nav.Link className="" href="/vis/servingRate">Service Rate</Nav.Link>
                 </div>
                 <div className="card m-1">
-                    <Nav.Link className="" href="/vis/servingHeatMap">Service Rate Plot</Nav.Link>
+                    <Nav.Link className="" href="/vis/servingHeatMap">Service Request Temporal & Spatial</Nav.Link>
                 </div>
                 <div className="card m-1">
                     <Nav.Link className="" href="/vis/speedViolation25">Speed Violation</Nav.Link>
