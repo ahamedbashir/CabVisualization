@@ -1,16 +1,22 @@
 {
   "files": {
-    "main.css": "/ahamedbashir/CabVisualization/static/css/main.47f16ae8.chunk.css",
-    "main.js": "/ahamedbashir/CabVisualization/static/js/main.47f3ec95.chunk.js",
-    "main.js.map": "/ahamedbashir/CabVisualization/static/js/main.47f3ec95.chunk.js.map",
-    "runtime-main.js": "/ahamedbashir/CabVisualization/static/js/runtime-main.8681e1b5.js",
-    "runtime-main.js.map": "/ahamedbashir/CabVisualization/static/js/runtime-main.8681e1b5.js.map",
-    "static/js/2.23bdcb19.chunk.js": "/ahamedbashir/CabVisualization/static/js/2.23bdcb19.chunk.js",
-    "static/js/2.23bdcb19.chunk.js.map": "/ahamedbashir/CabVisualization/static/js/2.23bdcb19.chunk.js.map",
-    "index.html": "/ahamedbashir/CabVisualization/index.html",
-    "precache-manifest.fa1fccc6cef287e125520108a157f8c6.js": "/ahamedbashir/CabVisualization/precache-manifest.fa1fccc6cef287e125520108a157f8c6.js",
-    "service-worker.js": "/ahamedbashir/CabVisualization/service-worker.js",
-    "static/css/main.47f16ae8.chunk.css.map": "/ahamedbashir/CabVisualization/static/css/main.47f16ae8.chunk.css.map",
-    "static/media/vehicle_paths.csv": "/ahamedbashir/CabVisualization/static/media/vehicle_paths.1f53f514.csv"
-  }
+    "main.css": "/static/css/main.63bb63e2.chunk.css",
+    "main.js": "/static/js/main.ddb4d88f.chunk.js",
+    "main.js.map": "/static/js/main.ddb4d88f.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.cadba644.js",
+    "runtime-main.js.map": "/static/js/runtime-main.cadba644.js.map",
+    "static/js/2.01db38b1.chunk.js": "/static/js/2.01db38b1.chunk.js",
+    "static/js/2.01db38b1.chunk.js.map": "/static/js/2.01db38b1.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.111f79e443f10427da8679da26657e2a.js": "/precache-manifest.111f79e443f10427da8679da26657e2a.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.63bb63e2.chunk.css.map": "/static/css/main.63bb63e2.chunk.css.map",
+    "static/js/2.01db38b1.chunk.js.LICENSE.txt": "/static/js/2.01db38b1.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cadba644.js",
+    "static/js/2.01db38b1.chunk.js",
+    "static/css/main.63bb63e2.chunk.css",
+    "static/js/main.ddb4d88f.chunk.js"
+  ]
 }

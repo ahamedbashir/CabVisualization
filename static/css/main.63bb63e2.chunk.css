@@ -1,0 +1,2 @@
+.iframe{height:calc(100vh - 4rem);width:100vw}.iframeTop{position:absolute;top:10%}.buttonRight,.iframeTop{right:1rem;width:"10px";height:40px}.buttonRight{position:fixed;z-index:10000}.plot,.visInfoBox{position:absolute;width:"10px";height:40px}.visInfoBox{top:10%;left:1rem}.cartoInfoBox{position:absolute;top:50%;right:2rem;width:"10px";height:40px}.bg-semi-transparent{background-color:rgba(25,37,22,.7)}.rateButton{position:-webkit-sticky;position:sticky}
+/*# sourceMappingURL=main.63bb63e2.chunk.css.map */
